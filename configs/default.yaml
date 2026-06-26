@@ -1,0 +1,44 @@
+# Example source-tree CLI configuration for ASAP Bird Detection.
+# Copy this file and edit input/model paths for your machine:
+#   python main.py --config configs/default.yaml
+# The public repository does not ship datasets, weights, or TensorRT engines.
+
+mode: "video" # video, image, or export
+
+# Data settings
+data:
+  input: "data/samples/DSC_1132_long.mp4" # replace with your video/image path
+  output: "outputs/runtime"
+
+# Model settings
+model:
+  # Prefer a TensorRT engine rebuilt on the target machine for paper-aligned runs.
+  # Example: python main.py export -m /path/to/yolo11n.pt --imgsz 1280 --batch 16
+  model: "models/yolo11n_1280.engine"
+  conf: 0.25
+  classes: null # all classes, or [14] for bird-only COCO filtering
+
+# Inference parameters
+inference:
+  patch_size: 1280
+  min_overlap: 128
+  global_context: false
+  augment: false
+  resize: null # [W, H], e.g. [2560, 1440], or null
+  iou_thres: 0.45
+
+# Processing/resources
+processing:
+  # Start with 2 on 24GB GPUs for 1280px TensorRT engines; raise only after
+  # worker warmup succeeds without TensorRT context/OOM errors.
+  workers_per_gpu: 2
+  batch_size: 8 # runtime dispatch batch per worker; TRT engine max batch should be 16
+  stride: 1
+  offset: 0
+  num_frames: null
+
+# Output/debugging
+flags:
+  save: false
+  save_json: false
+  plot_fps: false

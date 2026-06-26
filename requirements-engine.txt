@@ -1,0 +1,9 @@
+# Optional dependencies for rebuilding TensorRT .engine files.
+# Install these only on Linux CUDA/TensorRT machines when `python main.py export`
+-r requirements.txt
+onnx>=1.12.0,<2.0.0
+onnxruntime-gpu
+onnxslim>=0.1.82
+# Match this to your CUDA/TensorRT stack. This pin was validated on a CUDA 12.x
+# driver stack with torch 2.6.0+cu124; do not install it on CUDA 13-only hosts.
+tensorrt-cu12==10.15.1.29; platform_system == "Linux"

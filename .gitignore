@@ -1,0 +1,49 @@
+# Python / tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# Local environments and config
+.venv/
+venv/
+env/
+.env
+.env.*
+*.pem
+*.key
+
+# Data, models, generated outputs
+data/
+models/
+runs/
+experiments/
+reports/
+outputs/
+output_results/
+*.pt
+*.pth
+*.onnx
+*.engine
+*.npy
+*.npz
+*.mp4
+*.avi
+*.mov
+*.jpg
+*.jpeg
+*.png
+*.JPG
+*.MP4
+*.zip
+*.tar
+*.tar.*
+
+# Logs / scratch
+*.log
+test_output*/
+test_coco*/
+*_debug.py
+*.code-workspace

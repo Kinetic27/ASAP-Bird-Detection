@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the ASAP paper/manuscript listed below."
+title: "small_birds_detection"
+type: software
+authors:
+  - family-names: "Hong"
+    given-names: "Seok-Jin"
+    email: "kinetic27@gachon.ac.kr"
+    affiliation: "Gachon University"
+  - family-names: "Jung"
+    given-names: "Heon"
+    email: "hjeong@cdu.ac.kr"
+    affiliation: "Chodang University"
+  - family-names: "Lee"
+    given-names: "Sang-Woong"
+    email: "slee@gachon.ac.kr"
+    affiliation: "Gachon University"
+keywords:
+  - small object detection
+  - bird monitoring
+  - 4k video
+  - asynchronous inference
+  - sahi
+abstract: "Paper-aligned ASAP runtime and reproduction code for real-time high-resolution small-bird flock monitoring."
+preferred-citation:
+  type: article
+  title: "Asynchronous Slicing Accelerated Pipeline for Real-time High-Resolution Small Bird Flock Monitoring"
+  year: 2026
+  authors:
+    - family-names: "Hong"
+      given-names: "Seok-Jin"
+    - family-names: "Jung"
+      given-names: "Heon"
+    - family-names: "Lee"
+      given-names: "Sang-Woong"
+  note: "Use the latest manuscript/publication metadata when the paper is formally published."
